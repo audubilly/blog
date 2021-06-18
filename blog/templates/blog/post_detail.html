@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends 'blog/base.html' %}
+
+    {% block content %}
+
+        <div class="post-entry">
+            <h2> {{ post.title }}</h2>
+            <p>{{ post.body}}</p>
+        </div>
+
+        <p><a href="{% url 'post_edit' post.pk %}">+ Edit Blog post</a></p>
+        <p><a href="{% url 'post_confirm_delete' post.pk %}">+ Delete Blog post</a></p>
+
+    {% endblock content %}
+
+
+</body>
+</html>
